@@ -1,16 +1,26 @@
 import math
 
 def rootfactorial(x):
-    if not type(x) == int:
-        raise TypeError("input is not an integer")
-    if x < 0 or x > 20:
-        raise ValueError("input must be between 0 and 20 inclusive")
-    return(math.sqrt(math.factorial(x)))
 
-# Test it
-#print(rootfactorial(-1))
-#print(rootfactorial(1.0))
-#print(rootfactorial(21))
-#print(rootfactorial(10))
+    try:
+        x = int(input("Give me an integer: "))
+    except:
+        raise TypeError("ERROR, that is not a valid integer input.")
+
+    try:
+        x > 0
+    except:
+        raise ValueError("ERROR, that is not a positive number.")
+
+    if x < 20:
+        x = math.factorial(x)
+        return x
+    else:
+        raise ValueError("ERROR, your input is more than 20.")
+
+    result = math.sqrt(rootfactorial(x))
+    return result
+
+    print(result)
 
 quit()
