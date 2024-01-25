@@ -1,16 +1,26 @@
-# This is a sample Python script.
+import math
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def rootfactorial(x):
 
+    try:
+        x = int(input("Give me an integer: "))
+    except:
+        raise TypeError("ERROR, that is not a valid integer input.")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    try:
+        x > 0
+    except:
+        raise ValueError("ERROR, that is not a positive number.")
 
+    if x < 20:
+        x = math.factorial(x)
+        return x
+    else:
+        raise ValueError("ERROR, your input is more than 20.")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    result = math.sqrt(rootfactorial(x))
+    return result
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print(result)
+
+quit()
